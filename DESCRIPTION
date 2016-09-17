@@ -1,0 +1,13 @@
+Package: AtConP
+Type: Package
+Title: Data Preparation
+Version: 1.0
+Date: 2016-09-17
+Author: Prabhakar Srivastav
+Maintainer: Prabhakar Srivastav <prk327@gmail.com>
+Description: The "AtConP" Attribute Convertion package was created to minimize the repetition of some task which include converting character to factor attributes and creating dummy variables. This package includes two function initially, df.factor and df.matrix. The function df.factor takes the argument of a dataframe and find for any character attributes and if it match the attributes is then converted to class factor, the output of the function "df.factor" is a data frame and can be strove in a new data frame. The other function "df.matrix" takes the "x" (data frame) as argument and an option argument "name" which is to specify the intial name of the dummy data frame, after providing the argument the function "df.matrix" search for the class factor in the given data frame(x) and if it match it store the attribute name and count the number of factor levels, the function then create a data frame with name provided by the user and adding that name by "_" with the attribute name store by the function, and thens columns as per the number of levels (which is number of levels n - 1). The next step it store the values of each column as 0 and 1 for building a model.
+License: GPL-2
+RoxygenNote: 5.0.1
+Depends: R (>= 2.10)
+NeedsCompilation: no
+Packaged: 2016-09-17 17:58:59 UTC; Suresh
