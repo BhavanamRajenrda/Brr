@@ -1,4 +1,4 @@
-df.matrix <-
+environment(df.matrix <-
   function(x, name = "dummy", sep = ":") {
     cn <- 0
     y <- data.frame()
@@ -18,4 +18,4 @@ df.matrix <-
     assign(paste(name),
            y,
            environment(df.matrix))
-  }
+  })
