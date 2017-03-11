@@ -1,4 +1,4 @@
-df.factor <-
+environment(df.factor <-
 function(x) {
     for (i in 1:ncol(x)) {
       if (typeof(x[, i]) == "character") {
@@ -6,4 +6,4 @@ function(x) {
       }
     }
     return(x)
-  }
+  })
