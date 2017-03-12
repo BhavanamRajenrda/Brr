@@ -24,8 +24,8 @@ df.matrix <-
     }
     cn <- as.vector(strsplit(cn, ","))
     for (k in cn) {
-      y <- x[, !(colnames(x) %in% k)]
+      y <- x[,!(colnames(x) %in% k)]
     }
     assign(paste(name),
-           y,)
+           y, environment(.GlobalEnv))
   }
