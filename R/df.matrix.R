@@ -28,5 +28,5 @@ df.matrix <-
     }
     unlockEnvironment(df.matrix)
     assign(paste(name),
-           x, environment(df.matrix))
+           x, environment(package:AtConP))
   }
