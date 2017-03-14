@@ -26,7 +26,6 @@ df.matrix <-
     for (k in cn) {
       x <- x[,!(colnames(x) %in% k)]
     }
-    unlockEnvironment(df.matrix)
     assign(paste(name),
            x, environment(package:AtConP))
   }
