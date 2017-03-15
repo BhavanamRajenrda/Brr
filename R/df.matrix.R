@@ -27,5 +27,5 @@ df.matrix <-
       x <- x[,!(colnames(x) %in% k)]
     }
     assign(paste(name),
-           x, environment(AtConP))
+           x, environment(.GlobalEnv))
   }
