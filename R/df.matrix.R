@@ -26,7 +26,6 @@ df.matrix <-
     for (k in cn) {
       x <- x[,!(colnames(x) %in% k)]
     }
-    e1 <- new.env(parent = baseenv())
     assign(paste(name),
-           x, envir = e1)
+           x, envir = .GlobalEnv)
   }
