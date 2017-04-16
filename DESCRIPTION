@@ -7,8 +7,8 @@ Maintainer: Prabhakar Srivastav <prk327@gmail.com>
 Description: The "AtConP" Attribute Convertion package was
     created to minimize the repetition of some task which
     include converting character to factor attributes and
-    creating dummy variables. This package includes two function
-    initially, df.factor and df.matrix. The function df.factor takes
+    creating dummy variables. This package includes three function
+    initially, df.factor, df.matrix and df.AVF. The function df.factor takes
     the argument of a dataframe and find for any character attributes
     and if it match the attributes is then converted to class factor, the
     output of the function "df.factor" is a data frame and can be store
@@ -20,7 +20,9 @@ Description: The "AtConP" Attribute Convertion package was
     levels, the function then create a data frame with name provided by the user
     and adding that name by ":" with the attribute name store by the function, and
     thens columns as per the number of levels (which is number of levels n - 1).
-    The next step it store the values of each column as 0 and 1 for building a model.
+    The next step it store the values of each column as 0 and 1 for building a model. The function df.AVF takes the data frame
+    as argument and search for a factor column, then create a data frame of only factor column and compute the attribute
+    value frequency score.
 License: MIT
 Depends: R (>= 3.0.1)
 Encoding: UTF-8
