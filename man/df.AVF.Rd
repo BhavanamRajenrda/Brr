@@ -15,7 +15,7 @@ df.AVF(x, name = "AVF")
 it returns a data frame with avf score for outliers detection
 }
 \description{
-This is an example function name df.AVF'
+This is an example function name 'df.AVF'
 The function will calculate the frequency of each unique variable in every column over the row
 and sum the total number of count for each unique value in row which then will be divided by the
 total number of categorical variable
