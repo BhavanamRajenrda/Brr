@@ -6,12 +6,10 @@
 This is an example function named 'df.matrix'
 which convert a factor columns levels(k-1) to different columns with value 0 and 1.}
 \usage{
-df.matrix(x, name = "dummy", sep = ":")
+df.matrix(x, sep = ":")
 }
 \arguments{
 \item{x}{a data frame to be converted into matrix}
-
-\item{name}{the name of the new dummy dataframe}
 
 \item{sep}{the delimeter to be used for seperating column and levels}
 }
