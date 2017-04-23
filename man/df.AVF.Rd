@@ -4,12 +4,10 @@
 \alias{df.AVF}
 \title{The Attribute Value Frequency of Categorical variable}
 \usage{
-df.AVF(x, name = "AVF")
+df.AVF(x)
 }
 \arguments{
 \item{x}{a data frame to be which have both numerical and categorical variable}
-
-\item{name}{it the name of the new data frame to be given which will include he AVF score for each row}
 }
 \value{
 it returns a data frame with avf score for outliers detection
