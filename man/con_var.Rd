@@ -4,15 +4,12 @@
 \alias{con_var}
 \title{Data Frame of Numeric Variable
 This is an example function named 'con_var'
-which extracts numeric column of a data frame and then create a new data frame.
-The data frame can be given any name using name attribute, by default the name is "Numeric_VAR".}
+which extracts numeric column of a data frame and then create a new data frame.}
 \usage{
-con_var(x, name = "Numeric_VAR")
+con_var(x)
 }
 \arguments{
 \item{x}{a data frame}
-
-\item{name}{the name of the new numeric data frame}
 }
 \value{
 a dataframe of numeric column
@@ -21,5 +18,5 @@ a dataframe of numeric column
 Data Frame of Numeric Variable
 This is an example function named 'con_var'
 which extracts numeric column of a data frame and then create a new data frame.
-The data frame can be given any name using name attribute, by default the name is "Numeric_VAR".
 }
+
