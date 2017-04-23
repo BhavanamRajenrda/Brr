@@ -23,7 +23,7 @@ Description: The "AtConP" Attribute Convertion package was
     The next step it store the values of each column as 0 and 1 for building a model. The function df.AVF takes the data frame
     as argument and search for a factor column, then create a data frame of only factor column and compute the attribute
     value frequency score.
-License: MIT
+License: GPL-3
 Depends: R (>= 3.0.1)
 Encoding: UTF-8
 LazyData: true
