@@ -5,11 +5,10 @@
 #' and sum the total number of count for each unique value in row which then will be divided by the
 #' total number of categorical variable
 #' @param x a data frame to be which have both numerical and categorical variable
-#' @param name it the name of the new data frame to be given which will include he AVF score for each row
 #' @return it returns a data frame with avf score for outliers detection
 #' @export
 
-df.AVF <- function(x, name = "AVF") {
+df.AVF <- function(x) {
   y <- 0
   for (i in seq_along(x)) {
     if (class(x[, i]) == "factor") {
@@ -36,5 +35,5 @@ df.AVF <- function(x, name = "AVF") {
     d <- x[, !(colnames(x) %in% l)]
   }
   w <- cbind(d, z)
-  assign(name, w, envir = .GlobalEnv)
+  return(w)
 }
