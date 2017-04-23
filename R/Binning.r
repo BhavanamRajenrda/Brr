@@ -34,15 +34,14 @@ DF.Replace.Bin <-
           }
         }
         else {
-          x[, i] <- as.double(x[, i])
           for (j in 1:length(y[[1]][i][[1]][1][[1]])) {
             cz <-
               as.vector(strsplit(gsub(
                 "[]]", "", gsub("[[]", "", y[[1]][i][[1]][1][[1]])
               ), ","))
-            if (is.na(y[[1]][i][[1]][1][[1]][j])) {
+            if (y[[1]][i][[1]][1][[1]][j] == "NA") {
               x[which(is.na(x[, i])), paste(colnames(x)[i], "WOE", sep = ":")] <-
-                y[[1]][i][[1]][1][[1]][which(is.na(y[[1]][i][[1]][1][[1]]))]
+                y[[1]][i][[1]][1][[1]][which(y[[1]][i][[1]][1][[1]][j] == "NA")]
             }
             else {
               x[which(x[, i] >= as.double(cz[[j]][1]) &
