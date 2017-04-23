@@ -17,40 +17,44 @@ DF.Replace.WOE <-
     cz <- 0
     D <- X[, Dependent]
     x <- X[,-which(names(X) == Dependent)]
+    cn <- names(x)
     if (class(y) == "Information") {
       for (i in 1:ncol(x)) {
         if (class(x[, i]) == "factor") {
           for (j in 1:length(y[[1]][i][[1]][1][[1]])) {
             x[, i] <- as.character(x[, i])
             if (is.na(y[[1]][i][[1]][1][[1]][j])) {
-              x[[i]][which(is.na(x[, i]))] <-
+              x[which(is.na(x[, i])), paste(colnames(x)[i], "WOE", sep = ":")] <-
                 y[[1]][i][[1]][4][[1]][which(is.na(y[[1]][i][[1]][1][[1]]))]
             }
             else {
-              x[[i]][which(x[, i] == y[[1]][i][[1]][1][[1]][j])] <-
+              x[which(x[, i] == y[[1]][i][[1]][1][[1]][j]), paste(colnames(x)[i], "WOE", sep = ":")] <-
                 y[[1]][i][[1]][4][[1]][j]
             }
           }
         }
         else {
+          x[, i] <- as.double(x[, i])
           for (j in 1:length(y[[1]][i][[1]][1][[1]])) {
             cz <-
               as.vector(strsplit(gsub(
                 "[]]", "", gsub("[[]", "", y[[1]][i][[1]][1][[1]])
               ), ","))
             if (is.na(y[[1]][i][[1]][1][[1]][j])) {
-              x[[i]][which(is.na(x[, i]))] <-
+              x[which(is.na(x[, i])), paste(colnames(x)[i], "WOE", sep = ":")] <-
                 y[[1]][i][[1]][4][[1]][which(is.na(y[[1]][i][[1]][1][[1]]))]
             }
             else {
-              x[[i]][which(x[, i] >= cz[[j]][1] & x[, i] <= cz[[j]][2])] <-
+              x[which(x[, i] >= as.double(cz[[j]][1]) &
+                        x[, i] <= as.double(cz[[j]][2])), paste(colnames(x)[i], "WOE", sep = ":")] <-
                 y[[1]][i][[1]][4][[1]][j]
             }
           }
         }
       }
-      z <- cbind(x, D)
-      colnames(z)[which(names(X) == Dependent)] <- Dependent
     }
+    z <- cbind(x, D)
+    colnames(z)[which(names(z) == "D")] <- Dependent
+    z <- z[, -which(names(x) == cn)]
     return(z)
   }
