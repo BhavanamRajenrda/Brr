@@ -24,11 +24,11 @@ DF.Replace.Bin <-
           for (j in 1:length(y[[1]][i][[1]][1][[1]])) {
             x[, i] <- as.character(x[, i])
             if (is.na(y[[1]][i][[1]][1][[1]][j])) {
-              x[which(is.na(x[, i])), paste(colnames(x)[i], "WOE", sep = ":")] <-
+              x[which(is.na(x[, i])), paste(colnames(x)[i], "Bin", sep = ":")] <-
                 y[[1]][i][[1]][1][[1]][which(is.na(y[[1]][i][[1]][1][[1]]))]
             }
             else {
-              x[which(x[, i] == y[[1]][i][[1]][1][[1]][j]), paste(colnames(x)[i], "WOE", sep = ":")] <-
+              x[which(x[, i] == y[[1]][i][[1]][1][[1]][j]), paste(colnames(x)[i], "Bin", sep = ":")] <-
                 y[[1]][i][[1]][1][[1]][j]
             }
           }
@@ -40,12 +40,12 @@ DF.Replace.Bin <-
                 "[]]", "", gsub("[[]", "", y[[1]][i][[1]][1][[1]])
               ), ","))
             if (y[[1]][i][[1]][1][[1]][j] == "NA") {
-              x[which(is.na(x[, i])), paste(colnames(x)[i], "WOE", sep = ":")] <-
+              x[which(is.na(x[, i])), paste(colnames(x)[i], "Bin", sep = ":")] <-
                 y[[1]][i][[1]][1][[1]][which(y[[1]][i][[1]][1][[1]][j] == "NA")]
             }
             else {
               x[which(x[, i] >= as.double(cz[[j]][1]) &
-                        x[, i] <= as.double(cz[[j]][2])), paste(colnames(x)[i], "WOE", sep = ":")] <-
+                        x[, i] <= as.double(cz[[j]][2])), paste(colnames(x)[i], "Bin", sep = ":")] <-
                 y[[1]][i][[1]][1][[1]][j]
             }
           }
