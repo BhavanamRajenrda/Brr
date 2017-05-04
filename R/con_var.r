@@ -11,9 +11,8 @@ con_var <- function(x) {
   cn <- 0
   z <- data.frame()
   for (i in seq_along(x)) {
-    if (class(x[, i]) == "numeric") {
-      cn <- trimws(sub("0,", "", paste(cn, colnames(x)[i],
-                                       sep = ",")))
+    if (class(x[, i]) == "numeric" || class(x[, i]) == "integer") {
+      cn <- trimws(sub("0,", "", paste(cn, colnames(x)[i],sep = ",")))
     }
   }
   cn <- as.vector(strsplit(cn, ","))
